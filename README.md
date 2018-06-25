@@ -28,3 +28,8 @@
 
 ![demo](https://github.com/dawangraoming/iconfont-helper-chrome-extension/blob/master/assets/demo.gif?raw=true)
 
+## More ❤️
+如果这个项目对你有帮助，请给一个`Star`；
+如果你有更好的建议或想法，希望可以在`issues`中看到你的建议哦。
+
+
