@@ -5,7 +5,7 @@
 
 body {
     width: 200px;
-    padding: 10px 20px 5px;
+    padding: 10px 20px;
     min-height: 185px;
 }
 
@@ -90,4 +90,15 @@ dl.control-group > dt {
     color: rgba(0, 0, 0, .25);
     background-color: #f5f5f5;
     border-color: #d9d9d9;
+}
+
+.copyright {
+    color: #9c9c9c;
+    padding-top: 10px;
+    border-top: 1px solid #dedede;
+    margin-top: 10px;
+}
+
+a {
+    color: #2879d6;
 }
