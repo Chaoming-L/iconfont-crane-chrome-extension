@@ -8,8 +8,8 @@
 [Google 商店](https://chrome.google.com/webstore/detail/naogknojdhkjjkbcjndmpkoleijgabdj)
 
 #### 方案二：离线安装
-1. 离线crx安装，从[release](https://github.com/dawangraoming/iconfont-helper-chrome-extension/releases/)中下载crx文件
-2. Chrome浏览器打开`扩展程序`
+1. [下载crx文件](https://github.com/dawangraoming/iconfont-helper-chrome-extension/releases/download/V1.0/iconfont-helper-chrome-extension.crx)
+2. 从Chrome浏览器`更多工具`中打开`扩展程序`
 3. 开启`开发者模式`
 4. 将crx文件拖入浏览器的`扩展程序`页面中
 
