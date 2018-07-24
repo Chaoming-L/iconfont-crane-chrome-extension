@@ -29,7 +29,10 @@
     for (let i = 0; i < buttonList.length; i++) {
         // 添加监听
         buttonList[i].addEventListener('click', function () {
-            sendMessage({type: this.getAttribute('data-type')});
+            sendMessage({
+                type: this.getAttribute('data-type'),
+                size: $('#sizeInput').value
+            });
         });
     }
 

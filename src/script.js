@@ -32,10 +32,11 @@
     /**
      * 将SVG转PNG数据
      * @param svg {string} svg 字符串
+     * @param [size] {number} 图像尺寸、
      * @param [type] {string} 下载类型，支持png、GIF、
      * @return {Promise<string>} 返回一个Promise
      */
-    function createPNG(svg, type) {
+    function createPNG(svg, size, type) {
         return new Promise(resolve => {
             const img = new Image();
             const canvas = document.createElement('canvas');
@@ -47,8 +48,7 @@
             `
             document.body.appendChild(img);
             document.body.appendChild(canvas);
-            const sizeInput = $('.manage-mid-wrap .size-input');
-            const size = sizeInput ? sizeInput.value : 200;
+            size = size ? size : 200;
             canvas.width = size;
             canvas.height = size;
             const ctx = canvas.getContext('2d');
@@ -74,7 +74,7 @@
             // 图片加载完毕后
             img.onload = function () {
                 ctx.drawImage(img, 0, 0, size, size);
-                resolve(canvas.toDataURL(compileType));
+                resolve(canvas.toDataURL(compileType), 1);
                 canvas.remove();
                 img.remove();
             };
@@ -85,8 +85,9 @@
     /**
      * 下载模块
      * @param [type] {string} 可选，下载类型，支持png、svg，默认svg
+     * @param [size] {number} 图像尺寸
      */
-    async function download(type) {
+    async function download(type, size) {
         // 获取所有购物车内的元素
         const iconList = document.querySelectorAll(".block-car-container .block-icon-list>li");
         if (!iconList || iconList.length < 1) return;
@@ -106,7 +107,7 @@
                 zipFile.file(name, text);
             } else {
                 name += '.' + type;
-                let pngFile = await createPNG(text, type);
+                let pngFile = await createPNG(text, size, type);
                 pngFile = pngFile.replace(/^data:image\/\w+;base64,/, '');
                 zipFile.file(name, pngFile, {base64: true});
             }
@@ -157,19 +158,19 @@
                 break;
 
             case 'download-svg':
-                download('svg');
+                download('svg', request.size);
                 break;
 
             case 'download-png':
-                download('png');
+                download('png', request.size);
                 break;
 
             case 'download-jpg':
-                download('jpg');
+                download('jpg', request.size);
                 break;
 
             case 'download-webp':
-                download('webp');
+                download('webp', request.size);
                 break;
         }
         sendResponse('over');

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+
 }
 
 body {
@@ -101,4 +102,19 @@ dl.control-group > dt {
 
 a {
     color: #2879d6;
+}
+
+.size-input-wrap {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.size-input-wrap label{
+    margin-right: 10px;
+}
+.size-input-wrap input {
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    box-sizing: border-box;
 }
