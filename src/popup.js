@@ -42,20 +42,11 @@
         if (!(/^https?:\/\/(www.)?iconfont.cn/.test(url))) {
             $warning.innerText = '当前站点不支持此功能';
             $warning.style.display = 'block';
-            // for (let i = 0; i < buttonList.length; i++) {
-            //     // 添加禁用
-            //     buttonList[i].classList.add('control-button-dis');
-            // }
             return;
         }
         // 隐藏警告
         $warning.style.display = 'none';
-        // if (
-        //     !(/^https?:\/\/(www.)?iconfont.cn\/collections\/detail/.test(url)) ||
-        //     !(/^https?:\/\/(www.)?iconfont.cn\/search\/index/.test(url))
-        // ) {
-        //
-        // }
+
     });
 
 

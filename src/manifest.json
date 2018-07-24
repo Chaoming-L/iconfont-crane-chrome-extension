@@ -1,7 +1,7 @@
 {
   "name": "iconfont-helper",
   "description": "支持iconfont一键添加购物车、一键购物车下载的等功能。http://github.com/dawangraoming",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "permissions": [
     "tabs",
     "http://*/*",
