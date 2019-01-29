@@ -66,7 +66,7 @@
      * @param [type] {string} 可选，下载类型，支持png、svg，默认svg
      * @param [size] {number} 图像尺寸
      */
-    async function download(type, size) {
+    async function download(type = 'svg', size) {
         // 获取所有购物车内的元素
         const iconList = document.querySelectorAll(".project-iconlist .block-icon-list>li");
 
@@ -82,7 +82,7 @@
             let name = liEle.querySelector('span.icon-code-show').innerText;
             // 获取SVG路径，去除掉无用的信息
             const text = `<svg xmlns="${svg.getAttribute('xmlns')}" viewBox="${svg.getAttribute('viewBox')}" version="${svg.getAttribute('version')}">${svg.innerHTML}</svg>`;
-            if (type === 'svg' || !type) {
+            if (type === 'svg') {
                 name += '.svg';
                 zipFile.file(name, text);
             } else {
@@ -98,7 +98,7 @@
             const a = document.createElement("a");
             document.body.appendChild(a);
             a.setAttribute("class", "svg-crowbar");
-            a.setAttribute("download", "svgs.zip");
+            a.setAttribute("download", `${type}s.zip`);
             a.setAttribute("href", url);
             a.style["display"] = "none";
             a.click();
