@@ -17,12 +17,10 @@
 一键下载：
 支持PNG、SVG、JPG、WEBP类型下载
 
-----
-
+## `注意`
+使用iconfont-crane的时候,Iconfont页面里svg显示模式必须切为`Symbol`,*❌否则文件命名不正确*
+![screen](https://raw.githubusercontent.com/chaoming56/Img_Hub/master/iconfont-demo/warning.png)
 ## 📝More
 欢迎star✨
 
 灵感来自: https://github.com/dawangraoming/iconfont-helper-chrome-extension
-
-
-
