@@ -66,7 +66,7 @@
      * @param [type] {string} 可选，下载类型，支持png、svg，默认svg
      * @param [size] {number} 图像尺寸
      */
-    async function download(type = 'svg', size) {
+    async function download(type = 'svg', size = 200) {
         // 获取所有购物车内的元素
         const iconList = document.querySelectorAll(".project-iconlist .block-icon-list>li");
 
@@ -81,7 +81,7 @@
             // 获取图标的名词
             let name = liEle.querySelector('span.icon-code-show').innerText;
             // 获取SVG路径，去除掉无用的信息
-            const text = `<svg xmlns="${svg.getAttribute('xmlns')}" viewBox="${svg.getAttribute('viewBox')}" version="${svg.getAttribute('version')}">${svg.innerHTML}</svg>`;
+          const text = `<svg xmlns="${svg.getAttribute('xmlns')}" width="${size}" height="${size}" viewBox="${svg.getAttribute('viewBox')}"  version="${svg.getAttribute('version')}">${svg.innerHTML}</svg>`;
             if (type === 'svg') {
                 name += '.svg';
                 zipFile.file(name, text);
